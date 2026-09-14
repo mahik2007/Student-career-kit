@@ -3,26 +3,24 @@
 @layer base {
   :root {
     --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --navy-primary: #0B1220;
-    --navy-dark: #0F172A;
     --emerald-primary: #16A34A;
-    --emerald-hover: #15803D;
-    --mint-bg: #ECFDF5;
-    --mint-border: #A7F3D0;
-    --slate-bg: #FFFFFF;
-    --canvas-bg: #F8FAFC;
-    --border-subtle: #E2E8F0;
-    --border-strong: #CBD5E1;
-    --text-muted: #64748B;
-    --text-primary: #0F172A;
+    --emerald-hover:   #15803D;
+    --canvas-bg:       #ffffff;
+    --section-alt:     #f8fafc;
+    --border-subtle:   #e2e8f0;
+    --border-strong:   #cbd5e1;
+    --text-primary:    #0f172a;
+    --text-muted:      #64748b;
   }
 
+  /* Dark mode — pure black + visible green accents */
   .dark {
-    --canvas-bg: #030712;
-    --text-primary: #F8FAFC;
-    --text-muted: #94A3B8;
-    --border-subtle: #1E293B;
-    --border-strong: #334155;
+    --canvas-bg:    #0a0a0a;
+    --section-alt:  #111111;
+    --border-subtle:#1f1f1f;
+    --border-strong:#2a2a2a;
+    --text-primary: #f1f5f9;
+    --text-muted:   #94a3b8;
   }
 
   html, body {
@@ -35,13 +33,11 @@
   }
 }
 
-/* Override font-sans to use Plus Jakarta Sans */
 @layer utilities {
   .font-sans {
     font-family: var(--font-plus-jakarta);
   }
 
-  /* Hide scrollbar but allow scrolling */
   .scrollbar-none {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -50,7 +46,6 @@
     display: none;
   }
 
-  /* Fix for h-13 which doesn't exist in Tailwind */
   .h-13 {
     height: 3.25rem;
   }
@@ -65,14 +60,22 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #94a3b8;
 }
 
-/* Print Styles for ATS Resume PDF */
+/* Dark scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Print Styles */
 @media print {
   body {
     background: white !important;

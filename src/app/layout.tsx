@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-[#f8f9ff] text-[#0F172A] selection:bg-[#16A34A] selection:text-white">
+      <body className="min-h-screen flex flex-col font-sans bg-white dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white">
         <AppProvider>
           {children}
         </AppProvider>

@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
   const isLanding = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 dark:bg-[#080d1a]/85 backdrop-blur-md border-b border-[#E2E8F0] dark:border-slate-800 transition-colors">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#0f0f0f]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="transition-transform active:scale-95">
@@ -160,7 +160,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 flex flex-col gap-3 shadow-lg">
+        <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#141414] px-4 pt-3 pb-6 flex flex-col gap-3 shadow-lg">
           {isLanding ? (
             <>
               <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-sm font-semibold py-2">How it works</a>

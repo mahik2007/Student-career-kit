@@ -4,7 +4,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-[#070c18] border-t border-[#E2E8F0] dark:border-slate-800 mt-auto transition-colors">
+    <footer className="bg-white dark:bg-[#111111] border-t border-slate-200 dark:border-slate-800 mt-auto transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2 flex flex-col gap-3">
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-100 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="border-t border-slate-100 dark:border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} Student Career Kit. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="text-slate-500">Razorpay Test Mode Verified</span>
