@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --navy-primary: #0B1220;
+    --navy-dark: #0F172A;
+    --emerald-primary: #16A34A;
+    --emerald-hover: #15803D;
+    --mint-bg: #ECFDF5;
+    --mint-border: #A7F3D0;
+    --slate-bg: #FFFFFF;
+    --canvas-bg: #F8FAFC;
+    --border-subtle: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --text-muted: #64748B;
+    --text-primary: #0F172A;
+  }
+
+  .dark {
+    --canvas-bg: #030712;
+    --text-primary: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border-subtle: #1E293B;
+    --border-strong: #334155;
+  }
+
+  html, body {
+    background-color: var(--canvas-bg);
+    color: var(--text-primary);
+    font-family: var(--font-plus-jakarta);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Override font-sans to use Plus Jakarta Sans */
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-plus-jakarta);
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Fix for h-13 which doesn't exist in Tailwind */
+  .h-13 {
+    height: 3.25rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Print Styles for ATS Resume PDF */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .resume-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
 }
