@@ -49,7 +49,7 @@ export default function LinkedInGeneratorPage() {
               LinkedIn Profile Generator
             </h1>
             <p className="text-xs text-slate-500 mt-1">
-              Professional headline variants, engagement-focused 'About' summary, and project showcase suggestions.
+              Professional headline variants, engagement-focused &apos;About&apos; summary, and project showcase suggestions.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function LinkedInGeneratorPage() {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-bold uppercase tracking-wider text-[#0B1220]">
-              02. 'About' Narrative
+              02. &apos;About&apos; Narrative
             </h2>
             <Button
               variant="secondary"

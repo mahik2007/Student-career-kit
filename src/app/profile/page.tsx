@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Input, Textarea, Select } from "@/components/ui/Input";
 import { Card, Badge } from "@/components/ui/Card";
 import { useApp } from "@/context/AppContext";
-import { Education, SkillItem, Experience, Project, Achievement } from "@/types";
+import { Education, SkillItem, Experience, Project, Achievement, TargetGoal } from "@/types";
 
 export default function ProfilePage() {
   const { profileData, updateProfileData, completionScore } = useApp();
@@ -97,7 +97,7 @@ export default function ProfilePage() {
     updateProfileData({ experience: [...profileData.experience, newExp] });
   };
 
-  const updateExperience = (id: string, field: keyof Experience, val: any) => {
+  const updateExperience = (id: string, field: keyof Experience, val: Experience[keyof Experience]) => {
     const updated = profileData.experience.map((e) =>
       e.id === id ? { ...e, [field]: val } : e
     );
@@ -124,7 +124,7 @@ export default function ProfilePage() {
     updateProfileData({ projects: [...profileData.projects, newProj] });
   };
 
-  const updateProject = (id: string, field: keyof Project, val: any) => {
+  const updateProject = (id: string, field: keyof Project, val: Project[keyof Project]) => {
     const updated = profileData.projects.map((p) =>
       p.id === id ? { ...p, [field]: val } : p
     );
@@ -225,6 +225,7 @@ export default function ProfilePage() {
           {tabs.map((tab) => (
             <button
               key={tab.id}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all ${
                 activeTab === tab.id
@@ -440,6 +441,7 @@ export default function ProfilePage() {
                   <Select
                     label="Category"
                     value={newSkillCategory}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     onChange={(e) => setNewSkillCategory(e.target.value as any)}
                     options={[
                       { label: "Programming Language", value: "languages" },
@@ -761,7 +763,7 @@ export default function ProfilePage() {
               <Select
                 label="Application Category"
                 value={profileData.targetGoal.application_type}
-                onChange={(e) => handleTargetChange("application_type", e.target.value as any)}
+                onChange={(e) => handleTargetChange("application_type", e.target.value as TargetGoal["application_type"])}
                 options={[
                   { label: "Summer / Winter Internship", value: "internship" },
                   { label: "Full-Time Fresher Job (Campus/Off-Campus)", value: "job" },

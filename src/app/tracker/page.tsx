@@ -95,7 +95,7 @@ export default function ApplicationTrackerPage() {
                 <Select
                   label="Stage"
                   value={status}
-                  onChange={(e) => setStatus(e.target.value as any)}
+                  onChange={(e) => setStatus(e.target.value as JobApplication["status"])}
                   options={[
                     { label: "Saved", value: "saved" },
                     { label: "Applied", value: "applied" },
@@ -158,7 +158,7 @@ export default function ApplicationTrackerPage() {
                         <span className="text-slate-400">{app.date_applied}</span>
                         <select
                           value={app.status}
-                          onChange={(e) => updateApplicationStatus(app.id, e.target.value as any)}
+                          onChange={(e) => updateApplicationStatus(app.id, e.target.value as JobApplication["status"])}
                           className="text-[10px] font-semibold text-emerald-700 bg-transparent border-0 cursor-pointer focus:ring-0 max-w-[70px]"
                         >
                           <option value="saved">Saved</option>
