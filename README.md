@@ -44,3 +44,72 @@ flowchart LR
     E --> SK
     P --> SK
     GH --> SK
+
+Student Career Kit
+│
+├── Landing Page
+│
+├── Authentication
+│   ├── Login
+│   └── Signup
+│
+├── Career Workspace
+│   ├── Dashboard
+│   ├── Career Profile
+│   ├── My Documents
+│   ├── Application Tracker
+│   └── Settings
+│
+├── Generators
+│   ├── Resume
+│   ├── Cover Letter
+│   ├── LinkedIn
+│   ├── Outreach
+│   ├── Project Descriptions
+│   └── GitHub README
+│
+├── Advanced Tools
+│   ├── Job Match
+│   └── Complete Suite
+│
+├── Payments
+│   ├── Checkout
+│   ├── Payment Success
+│   └── Payment Failed
+│
+└── Administration
+    └── Admin Workspace
+
+16 · ROUTE MAP
+Public
+/
+ /login
+ /signup
+ /pricing
+
+Career Workspace
+/dashboard
+/profile
+/documents
+/settings
+/tracker
+
+Generators
+/generate/resume
+/generate/cover-letter
+/generate/linkedin
+/generate/outreach
+/generate/projects
+/generate/github-readme
+
+Advanced Tools
+/tools/job-match
+/complete-suite
+
+Payments
+/checkout
+/payment/success
+/payment/failed
+
+Administration
+/admin
